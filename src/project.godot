@@ -27,8 +27,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Src"
-run/main_scene="res://UI.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [rendering]
 
