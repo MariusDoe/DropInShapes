@@ -10,8 +10,8 @@ var points: Array
 
 func clear():
 	image = Image.new()
-	image.create(rect_size.x, rect_size.y, Image.FORMAT_LA8, Image.INTERPOLATE_NEAREST)
-	image.fill(Color.white)
+	image.create(rect_size.x, rect_size.y, false, Image.FORMAT_LA8)
+	image.fill(Color(0, 0, 0, 0))
 	set_image_on_texture()
 	points = []
 	
@@ -67,5 +67,5 @@ func get_collision_polygon():
 	poly.polygon.append_array(points)
 	return poly
 
-
-
+func get_image():
+	return image
