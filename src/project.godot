@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Draw",
 "language": "GDScript",
 "path": "res://Draw.gd"
+}, {
+"base": "Camera2D",
+"class": "MainViewportCamera",
+"language": "GDScript",
+"path": "res://Camera2D.gd"
 } ]
 _global_script_class_icons={
-"Draw": ""
+"Draw": "",
+"MainViewportCamera": ""
 }
 
 [application]
