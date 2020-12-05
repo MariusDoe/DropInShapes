@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://wall.jpg" type="Texture" id=1]
+[ext_resource path="res://wall.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 135.427, 92.9245 )
@@ -14,4 +14,5 @@ scale = Vector2( 1, 1.00348 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
+scale = Vector2( 0.52, 0.36 )
 texture = ExtResource( 1 )

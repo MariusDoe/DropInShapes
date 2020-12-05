@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Obstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Anchor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Lava.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Background.png" type="Texture" id=5]
+[ext_resource path="res://D1.png" type="Texture" id=6]
+[ext_resource path="res://D2.png" type="Texture" id=7]
+[ext_resource path="res://goal.png" type="Texture" id=8]
 
 [node name="Main" type="Node2D"]
 
@@ -49,3 +54,69 @@ position = Vector2( 690.57, 341.206 )
 [node name="Anchor3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 172.913, 468.916 )
 rotation = -1.43117
+
+[node name="Lava" parent="." instance=ExtResource( 4 )]
+position = Vector2( 398, 557 )
+
+[node name="Lava2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 657, 559 )
+
+[node name="Lava3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 897, 557 )
+
+[node name="Lava4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -5.99988, 548 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 507.808, 326.042 )
+scale = Vector2( 1.01997, 1.27957 )
+texture = ExtResource( 5 )
+
+[node name="D1" type="Sprite" parent="."]
+position = Vector2( 350.057, 398.45 )
+scale = Vector2( 0.0910667, 0.104735 )
+texture = ExtResource( 6 )
+
+[node name="D2" type="Sprite" parent="."]
+position = Vector2( 570.497, 397.284 )
+scale = Vector2( 0.0910667, 0.104735 )
+texture = ExtResource( 6 )
+
+[node name="D3" type="Sprite" parent="."]
+position = Vector2( 479.522, 265.486 )
+rotation = 0.159152
+scale = Vector2( 0.0728425, 0.0819545 )
+texture = ExtResource( 7 )
+
+[node name="D4" type="Sprite" parent="."]
+position = Vector2( 479.522, 265.486 )
+rotation = 0.159152
+scale = Vector2( 0.0728425, 0.0819545 )
+texture = ExtResource( 7 )
+
+[node name="D5" type="Sprite" parent="."]
+position = Vector2( 532.008, 272.485 )
+rotation = 0.159152
+scale = Vector2( 0.0728425, 0.0819545 )
+texture = ExtResource( 7 )
+
+[node name="D6" type="Sprite" parent="."]
+position = Vector2( 291.74, 83.5358 )
+rotation = 0.159152
+scale = Vector2( 0.0728425, 0.0819545 )
+texture = ExtResource( 7 )
+
+[node name="D7" type="Sprite" parent="."]
+position = Vector2( 341.893, 133.689 )
+rotation = 0.159152
+scale = Vector2( 0.0728425, 0.0819545 )
+texture = ExtResource( 7 )
+
+[node name="goal" type="Sprite" parent="."]
+position = Vector2( 192.6, 548.91 )
+scale = Vector2( 0.186744, 0.186744 )
+texture = ExtResource( 8 )
