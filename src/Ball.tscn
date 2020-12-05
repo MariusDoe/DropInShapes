@@ -8,7 +8,7 @@ radius = 15.8015
 [node name="Ball" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2( 180.38, 26.7229 )
+position = Vector2( -1.02667, 0 )
 mass = 10.0
 
 [node name="Sprite" type="Sprite" parent="RigidBody2D"]
