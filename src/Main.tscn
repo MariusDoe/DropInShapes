@@ -1,13 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://BallAnchor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Obstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Anchor.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node2D"]
-
-[node name="Ball" parent="." instance=ExtResource( 1 )]
-position = Vector2( 126.561, 42.6665 )
 
 [node name="Obstacle" parent="." instance=ExtResource( 2 )]
 position = Vector2( 246.285, 92.9697 )
@@ -49,3 +46,6 @@ position = Vector2( 690.57, 341.206 )
 [node name="Anchor3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 172.913, 468.916 )
 rotation = -1.43117
+
+[node name="BallAnchor" parent="." instance=ExtResource( 1 )]
+position = Vector2( 127.477, 44.0497 )

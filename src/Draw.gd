@@ -8,13 +8,16 @@ func _ready():
 var image: Image
 var points: Array
 
+func get_size():
+	return image.get_size()
+
 func clear():
 	image = Image.new()
 	image.create(rect_size.x, rect_size.y, false, Image.FORMAT_LA8)
 	image.fill(Color(0, 0, 0, 0))
 	set_image_on_texture()
 	points = []
-	
+
 func set_image_on_texture():
 	(texture as ImageTexture).create_from_image(image)
 
@@ -26,8 +29,7 @@ signal done_drawing
 func _on_Draw_gui_input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		if event.button_mask & BUTTON_LEFT:
-			var pos = event.position - rect_position
-			pos.x += image.get_size().x
+			var pos = event.position
 			if last_valid:
 				draw_line_image(last, pos)
 			last = pos
@@ -39,6 +41,7 @@ func _on_Draw_gui_input(event: InputEvent):
 			clear()
 		else:
 			emit_signal("done_drawing")
+
 
 var color = Color.black
 
@@ -63,9 +66,49 @@ func draw_line_image(from: Vector2, to: Vector2):
 	set_image_on_texture()
 
 func get_collision_polygon():
-	var poly = CollisionPolygon.new()
-	poly.polygon.append_array(points)
+	var convex = ConvexPolygonShape2D.new()
+	convex.set_point_cloud(PoolVector2Array(points))
+	var poly = CollisionPolygon2D.new()
+	poly.polygon = convex.points
 	return poly
+
+func get_angle(a: Vector2, b: Vector2):
+	return (b - a).angle()
+
+func get_poly(a, b):
+	var poly = CollisionPolygon2D.new()
+	var offset = image.get_size() / 2
+	poly.polygon = PoolVector2Array([a - offset, b - offset])
+	return poly
+
+func get_collision_polygons(min_angle):
+	var polys = []
+	var a = points[0]
+	var i = 0
+	var break_outer = false
+	while not break_outer:
+		i += 1
+		if i >= len(points):
+			break_outer = true
+			break
+		var b = points[i]
+		var orig_angle = get_angle(a, b)
+		if b == a:
+			continue
+		while true:
+			i += 1
+			if i >= len(points):
+				break_outer = true
+				break
+			var c = points[i]
+			if abs(orig_angle - get_angle(c, a)) >= min_angle:
+				polys.append(get_poly(a, b))
+				a = b
+				break
+	var last_point = points[len(points) - 1]
+	if a != last_point:
+		polys.append(get_poly(a, last_point))
+	return polys
 
 func get_image():
 	return image
