@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://MainViewportContainer.gd" type="Script" id=1]
-[ext_resource path="res://Main.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Camera2D.gd" type="Script" id=3]
-[ext_resource path="res://Draw.gd" type="Script" id=4]
-[ext_resource path="res://GameController.gd" type="Script" id=5]
+[ext_resource path="res://GameController.gd" type="Script" id=1]
+[ext_resource path="res://Draw.gd" type="Script" id=2]
+[ext_resource path="res://MainViewportContainer.gd" type="Script" id=3]
+[ext_resource path="res://Main.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Camera2D.gd" type="Script" id=5]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 5 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -54,7 +54,7 @@ margin_right = 335.0
 margin_bottom = 599.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 
 [node name="MainViewportContainer" type="ViewportContainer" parent="HBoxContainer"]
 margin_left = 339.0
@@ -63,16 +63,16 @@ margin_bottom = 599.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="Viewport" type="Viewport" parent="HBoxContainer/MainViewportContainer"]
 size = Vector2( 1, 1 )
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Main" parent="HBoxContainer/MainViewportContainer/Viewport" instance=ExtResource( 2 )]
+[node name="Main" parent="HBoxContainer/MainViewportContainer/Viewport" instance=ExtResource( 4 )]
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/MainViewportContainer/Viewport"]
-script = ExtResource( 3 )
+script = ExtResource( 5 )
 [connection signal="done_drawing" from="HBoxContainer/VBoxContainer/Draw" to="." method="_on_Draw_done_drawing"]
 [connection signal="gui_input" from="HBoxContainer/VBoxContainer/Draw" to="HBoxContainer/VBoxContainer/Draw" method="_on_Draw_gui_input"]
