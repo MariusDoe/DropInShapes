@@ -1,4 +1,4 @@
 extends ViewportContainer
 
-func _draw():
+func _ready():
 	get_node("Viewport").size = rect_size
