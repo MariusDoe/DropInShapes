@@ -7,7 +7,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
-position = Vector2( 126.561, 42.6665 )
+position = Vector2( 107.873, -70.4612 )
 
 [node name="Obstacle" parent="." instance=ExtResource( 2 )]
 position = Vector2( 246.285, 92.9697 )
