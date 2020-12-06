@@ -18,6 +18,8 @@ var ball: Ball
 var ball_anchor: BallAnchor
 var anchors: Array
 
+var audioplayer: AudioStreamPlayer = null
+
 func _ready():
 	draw = get_node("HBoxContainer/VBoxContainer/DrawPanel/Draw")
 	camera = get_node("HBoxContainer/MainViewportContainer/Viewport/Camera2D")
@@ -32,6 +34,8 @@ func load_level():
 		clear_added()
 		level.queue_free()
 		level = null
+		audioplayer.queue_free()
+		audioplayer = null
 	level = levels[level_index].instance()
 	anchors = []
 	for child in level.get_children():
@@ -43,6 +47,10 @@ func load_level():
 			child.connect("goal_reached", self, "_on_Goal_goal_reached")
 		if child is Lava:
 			child.connect("ball_died", self, "_on_Lava_ball_died")
+		if child is AudioStreamPlayer:
+			audioplayer = child
+	level.remove_child(audioplayer)
+	add_child(audioplayer)
 
 	main_viewport.add_child(level)
 	ui_update_main_viewport()
@@ -140,6 +148,7 @@ func add_camera(anchor: Anchor, opacity):
 	var drawPanel = draw.get_parent()
 	var viewport_container = ViewportContainer.new()
 	var viewport = main_viewport.duplicate(DUPLICATE_SCRIPTS)
+	print(viewport.audio_listener_enable_2d)
 	viewport_container.add_child(viewport)
 	viewport_container.modulate = Color(1, 1, 1, opacity)
 	drawPanel.add_child(viewport_container)
