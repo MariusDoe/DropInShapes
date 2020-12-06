@@ -6,8 +6,8 @@
 [ext_resource path="res://Background.png" type="Texture" id=4]
 [ext_resource path="res://D1.png" type="Texture" id=5]
 [ext_resource path="res://D2.png" type="Texture" id=6]
-[ext_resource path="res://goal.png" type="Texture" id=7]
-[ext_resource path="res://BallAnchor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://BallAnchor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node2D"]
 
@@ -113,10 +113,9 @@ rotation = 0.159152
 scale = Vector2( 0.0728425, 0.0819545 )
 texture = ExtResource( 6 )
 
-[node name="goal" type="Sprite" parent="."]
-position = Vector2( 192.6, 548.91 )
-scale = Vector2( 0.186744, 0.186744 )
-texture = ExtResource( 7 )
-
-[node name="BallAnchor" parent="." instance=ExtResource( 8 )]
+[node name="BallAnchor" parent="." instance=ExtResource( 7 )]
 position = Vector2( 127.477, 44.0497 )
+
+[node name="Goal" parent="." instance=ExtResource( 8 )]
+position = Vector2( 197.509, 552.871 )
+scale = Vector2( 1.5, 1.5 )

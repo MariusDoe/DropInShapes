@@ -29,6 +29,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Draw.gd"
 }, {
+"base": "Node2D",
+"class": "Goal",
+"language": "GDScript",
+"path": "res://Goal.gd"
+}, {
+"base": "Node2D",
+"class": "Lava",
+"language": "GDScript",
+"path": "res://Lava.gd"
+}, {
 "base": "Camera2D",
 "class": "MainViewportCamera",
 "language": "GDScript",
@@ -39,6 +49,8 @@ _global_script_class_icons={
 "Ball": "",
 "BallAnchor": "",
 "Draw": "",
+"Goal": "",
+"Lava": "",
 "MainViewportCamera": ""
 }
 
