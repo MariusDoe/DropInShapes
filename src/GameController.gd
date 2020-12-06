@@ -3,7 +3,7 @@ extends Control
 var levels = [
 	preload("res://Level1.tscn"),
 	preload("res://Level2.tscn"),
-	preload("res://Level3.tscn")
+	preload("res://Level3.tscn"),
 ]
 
 var win_screen = preload("res://WinScreen.tscn")

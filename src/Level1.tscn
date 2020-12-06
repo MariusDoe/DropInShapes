@@ -17,7 +17,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
-view_rect = Rect2( 0, 0, 800, 800 )
+view_rect = Rect2( 0, 0, 750, 750 )
 desc = "Level 1
 
 Welcome to our game [b]Drop[/b]!

@@ -13,15 +13,11 @@
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
-view_rect = Rect2( 0, 0, 850, 850 )
+view_rect = Rect2( 0, 0, 860, 750 )
 desc = "Level 2"
-
-[node name="Obstacle" parent="." instance=ExtResource( 2 )]
-position = Vector2( 246.285, 92.9697 )
-rotation = 0.760963
-scale = Vector2( 1, 0.2 )
 
 [node name="Obstacle4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 172.285, 162.97 )
