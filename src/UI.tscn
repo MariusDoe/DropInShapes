@@ -19,9 +19,6 @@ anchor_bottom = 1.0
 margin_bottom = -0.200001
 size_flags_horizontal = 3
 size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 340.0
@@ -46,10 +43,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Draw" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+[node name="DrawPanel" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 301.0
 margin_right = 340.0
 margin_bottom = 599.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Draw" type="TextureRect" parent="HBoxContainer/VBoxContainer/DrawPanel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 333.0
+margin_bottom = 291.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
@@ -74,7 +79,7 @@ script = ExtResource( 4 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Deathtimer" type="Timer" parent="."]
-[connection signal="done_drawing" from="HBoxContainer/VBoxContainer/Draw" to="." method="_on_Draw_done_drawing"]
-[connection signal="gui_input" from="HBoxContainer/VBoxContainer/Draw" to="HBoxContainer/VBoxContainer/Draw" method="_on_Draw_gui_input"]
+[connection signal="done_drawing" from="HBoxContainer/VBoxContainer/DrawPanel/Draw" to="." method="_on_Draw_done_drawing"]
+[connection signal="gui_input" from="HBoxContainer/VBoxContainer/DrawPanel/Draw" to="HBoxContainer/VBoxContainer/DrawPanel/Draw" method="_on_Draw_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Deathtimer" to="." method="_on_Deathtimer_timeout"]

@@ -103,6 +103,8 @@ func get_poly(a, b):
 	return poly
 
 func get_collision_polygons(min_angle):
+	if len(points) <= 1:
+		return []
 	var polys = []
 	var a = points[0]
 	var i = 0
