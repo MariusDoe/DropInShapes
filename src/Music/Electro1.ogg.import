@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Electro1.ogg-5ede146ed84e706e45c6def881710e41.oggstr"
+
+[deps]
+
+source_file="res://Music/Electro1.ogg"
+dest_files=[ "res://.import/Electro1.ogg-5ede146ed84e706e45c6def881710e41.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
