@@ -23,25 +23,46 @@ func set_image_on_texture():
 
 var last: Vector2
 var last_valid = false
+var drawing = false
+var locked = false
 
 signal done_drawing
 
 func _on_Draw_gui_input(event: InputEvent):
-	if event is InputEventMouseMotion:
-		if event.button_mask & BUTTON_LEFT:
-			var pos = event.position
-			if last_valid:
-				draw_line_image(last, pos)
-			last = pos
-			points.append(pos)
-			last_valid = true
-	if event is InputEventMouseButton:
-		if event.pressed:
-			last_valid = false
-			clear()
-		else:
-			emit_signal("done_drawing")
+	if not locked:
+		if event is InputEventMouseMotion:
+			if event.button_mask & BUTTON_LEFT:
+				var pos = event.position
+				if pos.x >= 0 and pos.y >= 0 and \
+					pos.x < image.get_size().x and pos.y < image.get_size().y:
+					if last_valid:
+						draw_line_image(last, pos)
+					last = pos
+					points.append(pos)
+					last_valid = true
+				else:
+					end()
+		if event is InputEventMouseButton:
+			if event.pressed:
+				start()
+			else:
+				end()
 
+func lock():
+	locked = true
+
+func unlock():
+	locked = false
+
+func start():
+	last_valid = false
+	clear()
+	drawing = true
+
+func end():
+	if drawing:
+		emit_signal("done_drawing")
+		drawing = false
 
 var color = Color.black
 

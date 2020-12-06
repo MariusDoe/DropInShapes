@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Obstacle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Anchor.tscn" type="PackedScene" id=2]
@@ -8,8 +8,11 @@
 [ext_resource path="res://D2.png" type="Texture" id=6]
 [ext_resource path="res://goal.png" type="Texture" id=7]
 [ext_resource path="res://BallAnchor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level.gd" type="Script" id=9]
 
-[node name="Main" type="Node2D"]
+[node name="Level2" type="Node2D"]
+script = ExtResource( 9 )
+view_rect = Rect2( 0, 0, 837, 625 )
 
 [node name="Obstacle" parent="." instance=ExtResource( 1 )]
 position = Vector2( 246.285, 92.9697 )
@@ -44,9 +47,10 @@ scale = Vector2( 0.88, 0.17 )
 
 [node name="Anchor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 325.077, 275.587 )
+scale = Vector2( 2, 1 )
 
 [node name="Anchor2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 690.57, 341.206 )
+position = Vector2( 690.57, 250 )
 
 [node name="Anchor3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 172.913, 468.916 )
@@ -69,7 +73,7 @@ position = Vector2( -5.99988, 548 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 507.808, 326.042 )
+position = Vector2( 508.438, 326.042 )
 scale = Vector2( 1.01997, 1.27957 )
 texture = ExtResource( 4 )
 
