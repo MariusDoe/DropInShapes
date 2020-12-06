@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Level.gd" type="Script" id=1]
+[ext_resource path="res://Obstacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Anchor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Lava.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Background.png" type="Texture" id=5]
+[ext_resource path="res://D2.png" type="Texture" id=6]
+[ext_resource path="res://BallAnchor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Music/Electro1.ogg" type="AudioStream" id=9]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 1 )
+view_rect = Rect2( 0, 0, 850, 850 )
+
+[node name="Obstacle4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 172.285, 162.97 )
+rotation = 0.429351
+scale = Vector2( 1, 0.2 )
+
+[node name="Obstacle8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 520.367, 297.346 )
+rotation = -0.226893
+scale = Vector2( 1, 0.2 )
+
+[node name="Obstacle9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 505.964, 441.184 )
+rotation = 0.261799
+scale = Vector2( 1, 0.2 )
+
+[node name="Obstacle5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 546.813, 736.658 )
+scale = Vector2( 0.5, 0.2 )
+
+[node name="Obstacle6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 491.796, 692.162 )
+scale = Vector2( 0.1, 0.3 )
+
+[node name="Obstacle7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 606.005, 702.641 )
+scale = Vector2( 0.1, 0.3 )
+
+[node name="Anchor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 328.616, 273.277 )
+rotation = 0.401426
+scale = Vector2( 0.93, 1 )
+
+[node name="Anchor2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 726.618, 515.147 )
+rotation = 0.401426
+scale = Vector2( 0.93, 1 )
+
+[node name="Lava" parent="." instance=ExtResource( 4 )]
+position = Vector2( 744.634, 663.974 )
+
+[node name="Lava2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 351.692, 217.201 )
+rotation = -12.13
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Lava3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 348.224, 665.713 )
+
+[node name="Lava4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 86.9741, 666.663 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -1
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 456.389, 403.234 )
+scale = Vector2( 1.25776, 1.87691 )
+texture = ExtResource( 5 )
+
+[node name="D6" type="Sprite" parent="."]
+position = Vector2( 642.576, 405.922 )
+rotation = 0.159152
+scale = Vector2( 0.185698, 0.208927 )
+texture = ExtResource( 6 )
+
+[node name="D8" type="Sprite" parent="."]
+position = Vector2( 632.14, 217.122 )
+rotation = -0.329867
+scale = Vector2( 0.118382, 0.133191 )
+texture = ExtResource( 6 )
+
+[node name="D9" type="Sprite" parent="."]
+position = Vector2( 70.9864, 72.8409 )
+rotation = 0.159152
+scale = Vector2( 0.0728425, 0.0819545 )
+texture = ExtResource( 6 )
+
+[node name="D7" type="Sprite" parent="."]
+position = Vector2( 490.312, 594.464 )
+scale = Vector2( 0.257456, 0.289662 )
+texture = ExtResource( 6 )
+
+[node name="BallAnchor" parent="." instance=ExtResource( 7 )]
+position = Vector2( 127.477, 44.0497 )
+
+[node name="Goal" parent="." instance=ExtResource( 8 )]
+position = Vector2( 544.022, 667.606 )
+scale = Vector2( 2, 2 )
+
+[node name="Level1Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
