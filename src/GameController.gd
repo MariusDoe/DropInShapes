@@ -2,12 +2,15 @@ extends Control
 
 var levels = [
 	preload("res://Level1.tscn"),
-	preload("res://Level2.tscn")
+	preload("res://Level2.tscn"),
 ]
+
+var win_screen = preload("res://WinScreen.tscn")
 
 var level: Level = null
 var level_index = 0
 var camera: CustomCamera
+var richtextlabel: RichTextLabel
 var draw: Draw
 var timer: Timer
 var deathtimer: Timer
@@ -23,6 +26,7 @@ var audioplayer: AudioStreamPlayer = null
 func _ready():
 	draw = get_node("HBoxContainer/VBoxContainer/DrawPanel/Draw")
 	camera = get_node("HBoxContainer/MainViewportContainer/Viewport/Camera2D")
+	richtextlabel = get_node("HBoxContainer/VBoxContainer/Panel/RichTextLabel")
 	timer = get_node("Timer")
 	deathtimer = get_node("Deathtimer")
 	main_viewport = get_node("HBoxContainer/MainViewportContainer/Viewport")
@@ -30,12 +34,7 @@ func _ready():
 	load_level()
 
 func load_level():
-	if level:
-		clear_added()
-		level.queue_free()
-		level = null
-		audioplayer.queue_free()
-		audioplayer = null
+	unload_level()
 	level = levels[level_index].instance()
 	anchors = []
 	for child in level.get_children():
@@ -55,17 +54,34 @@ func load_level():
 	main_viewport.add_child(level)
 	ui_update_main_viewport()
 	
+	richtextlabel.text = level.desc
+	
 	add_cameras()
 
 	draw.unlock()
 	set_timer()
+
+func unload_level():
+	if level:
+		draw.clear()
+		clear_added()
+		audioplayer.get_parent().remove_child(audioplayer)
+		audioplayer.queue_free()
+		audioplayer = null
+		level.get_parent().remove_child(level)
+		level.queue_free()
+		level = null
 
 func next_level():
 	level_index += 1
 	if level_index < len(levels):
 		load_level()
 	else:
-		print("WON!")
+		won()
+
+func won():
+	unload_level()
+	get_tree().change_scene_to(win_screen)
 
 func reset():
 	level_index = 0
@@ -138,8 +154,10 @@ func add_drawn_static(anchor):
 	added_drawn_statics.append(node)
 
 func add_cameras():
+	var opacity = 1.0
 	for anchor in anchors:
-		add_camera(anchor, 1.0 / len(anchors))
+		add_camera(anchor, opacity)
+		opacity /= 2.0
 
 var cameras = []
 
@@ -152,7 +170,7 @@ func add_camera(anchor: Anchor, opacity):
 	viewport_container.add_child(viewport)
 	viewport_container.modulate = Color(1, 1, 1, opacity)
 	drawPanel.add_child(viewport_container)
-	drawPanel.move_child(viewport_container, 0)
+	drawPanel.move_child(viewport_container, drawPanel.get_child_count() - 2)
 	viewport.world_2d = main_viewport.world_2d
 	viewport.size = size
 	var cam = camera.duplicate(DUPLICATE_SCRIPTS)
