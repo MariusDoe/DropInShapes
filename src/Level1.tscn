@@ -127,6 +127,7 @@ scale = Vector2( 2, 2 )
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = -12.0
 autoplay = true
 
 [node name="D1" type="Sprite" parent="."]
