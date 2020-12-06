@@ -17,11 +17,9 @@ var ballScn = preload("res://Ball.tscn")
 var ball: Ball
 var ball_anchor: BallAnchor
 var anchors: Array
-var goals: Array
-var lavas: Array
 
 func _ready():
-	draw = get_node("HBoxContainer/VBoxContainer/Draw")
+	draw = get_node("HBoxContainer/VBoxContainer/DrawPanel/Draw")
 	camera = get_node("HBoxContainer/MainViewportContainer/Viewport/Camera2D")
 	timer = get_node("Timer")
 	deathtimer = get_node("Deathtimer")
@@ -31,26 +29,25 @@ func _ready():
 
 func load_level():
 	if level:
+		clear_added()
 		level.queue_free()
 		level = null
 	level = levels[level_index].instance()
 	anchors = []
-	goals = []
 	for child in level.get_children():
 		if child is Anchor:
 			anchors.append(child)
 		if child is BallAnchor:
 			ball_anchor = child
 		if child is Goal:
-			goals.append(child)
 			child.connect("goal_reached", self, "_on_Goal_goal_reached")
 		if child is Lava:
-			lavas.append(child)
 			child.connect("ball_died", self, "_on_Lava_ball_died")
 
-	main_viewport.fit_size(level.view_rect.size)
-	camera.show_rect(level.view_rect)
 	main_viewport.add_child(level)
+	ui_update_main_viewport()
+	
+	add_cameras()
 
 	draw.unlock()
 	set_timer()
@@ -131,3 +128,29 @@ func add_drawn_static(anchor):
 	body.scale = anchor.get_rect().size / draw.get_size()
 	print(body.scale)
 	added_drawn_statics.append(node)
+
+func add_cameras():
+	for anchor in anchors:
+		add_camera(anchor, 1.0 / len(anchors))
+
+var cameras = []
+
+func add_camera(anchor: Anchor, opacity):
+	var size = draw.get_size()
+	var drawPanel = draw.get_parent()
+	var viewport_container = ViewportContainer.new()
+	var viewport = main_viewport.duplicate(DUPLICATE_SCRIPTS)
+	viewport_container.add_child(viewport)
+	viewport_container.modulate = Color(1, 1, 1, opacity)
+	drawPanel.add_child(viewport_container)
+	drawPanel.move_child(viewport_container, 0)
+	viewport.world_2d = main_viewport.world_2d
+	viewport.size = size
+	var cam = camera.duplicate(DUPLICATE_SCRIPTS)
+	main_viewport.add_child(cam)
+	cam.show_rect(anchor.get_rect(), anchor.rotation, viewport, true)
+	cam.custom_viewport = viewport
+
+func ui_update_main_viewport():
+	main_viewport.fit_size(level.view_rect.size)
+	camera.show_rect(level.view_rect, 0)
