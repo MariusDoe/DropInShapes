@@ -90,7 +90,6 @@ position = Vector2( -142.732, 666.321 )
 z_index = -1
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
 position = Vector2( 445.939, 396.584 )
 scale = Vector2( 1.25776, 1.87691 )
 texture = ExtResource( 5 )
