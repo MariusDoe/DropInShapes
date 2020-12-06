@@ -13,160 +13,57 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
-view_rect = Rect2( 0, 0, 850, 850 )
+view_rect = Rect2( 0, 0, 800, 800 )
+
+[node name="Obstacle" parent="." instance=ExtResource( 2 )]
+position = Vector2( 246.285, 92.9697 )
+rotation = 0.760963
+scale = Vector2( 1, 0.2 )
 
 [node name="Obstacle4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 173.018, 165.454 )
-rotation = 0.429351
+position = Vector2( 172.285, 162.97 )
+rotation = 0.760963
 scale = Vector2( 1, 0.2 )
 
 [node name="Obstacle8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 222.956, 101.925 )
-rotation = 0.429351
+position = Vector2( 454.541, 511.708 )
 scale = Vector2( 1, 0.2 )
 
-[node name="Obstacle15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 374.794, 543.352 )
+[node name="Obstacle5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 318.813, 739.508 )
+scale = Vector2( 0.5, 0.2 )
+
+[node name="Obstacle6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 263.796, 695.012 )
 scale = Vector2( 0.1, 0.3 )
 
-[node name="Obstacle16" parent="." instance=ExtResource( 2 )]
-position = Vector2( 431.052, 582.03 )
+[node name="Obstacle7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 378.005, 705.491 )
 scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle20" parent="." instance=ExtResource( 2 )]
-position = Vector2( 478.521, 553.901 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle29" parent="." instance=ExtResource( 2 )]
-position = Vector2( 545.328, 539.836 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle31" parent="." instance=ExtResource( 2 )]
-position = Vector2( 608.619, 560.933 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle37" parent="." instance=ExtResource( 2 )]
-position = Vector2( 664.878, 599.611 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle39" parent="." instance=ExtResource( 2 )]
-position = Vector2( 740.475, 499.4 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle22" parent="." instance=ExtResource( 2 )]
-position = Vector2( 374.794, 543.352 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle23" parent="." instance=ExtResource( 2 )]
-position = Vector2( 431.052, 582.03 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle25" parent="." instance=ExtResource( 2 )]
-position = Vector2( 478.521, 553.901 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle28" parent="." instance=ExtResource( 2 )]
-position = Vector2( 545.328, 539.836 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle32" parent="." instance=ExtResource( 2 )]
-position = Vector2( 608.619, 560.933 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle36" parent="." instance=ExtResource( 2 )]
-position = Vector2( 664.878, 599.611 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle40" parent="." instance=ExtResource( 2 )]
-position = Vector2( 740.475, 499.4 )
-scale = Vector2( 0.1, 0.3 )
-
-[node name="Obstacle17" parent="." instance=ExtResource( 2 )]
-position = Vector2( 374.794, 699.822 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle18" parent="." instance=ExtResource( 2 )]
-position = Vector2( 431.052, 738.5 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle19" parent="." instance=ExtResource( 2 )]
-position = Vector2( 478.521, 710.37 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle30" parent="." instance=ExtResource( 2 )]
-position = Vector2( 545.328, 696.306 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle34" parent="." instance=ExtResource( 2 )]
-position = Vector2( 608.619, 717.403 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle35" parent="." instance=ExtResource( 2 )]
-position = Vector2( 664.878, 756.081 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle41" parent="." instance=ExtResource( 2 )]
-position = Vector2( 740.475, 655.87 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle21" parent="." instance=ExtResource( 2 )]
-position = Vector2( 374.794, 699.822 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle24" parent="." instance=ExtResource( 2 )]
-position = Vector2( 431.052, 738.5 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle26" parent="." instance=ExtResource( 2 )]
-position = Vector2( 478.521, 710.37 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle27" parent="." instance=ExtResource( 2 )]
-position = Vector2( 545.328, 696.306 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle33" parent="." instance=ExtResource( 2 )]
-position = Vector2( 608.619, 717.403 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle38" parent="." instance=ExtResource( 2 )]
-position = Vector2( 664.878, 756.081 )
-scale = Vector2( 0.1, 2 )
-
-[node name="Obstacle42" parent="." instance=ExtResource( 2 )]
-position = Vector2( 740.475, 655.87 )
-scale = Vector2( 0.1, 2 )
 
 [node name="Anchor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 334.67, 230.405 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 302.916, 301.072 )
+scale = Vector2( 0.93, 1 )
 
 [node name="Anchor2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 453.102, 263.453 )
-rotation = 1.5708
-
-[node name="Anchor3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 257.561, 540.759 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 105.96, 532.593 )
+rotation = -8.88373
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Lava" parent="." instance=ExtResource( 4 )]
-position = Vector2( 391.185, 743.38 )
+position = Vector2( 525.184, 664.924 )
 
 [node name="Lava2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 905.266, 746.554 )
+position = Vector2( 454.036, 407.161 )
 
 [node name="Lava3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 656.568, 744.373 )
-
-[node name="Lava5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1170.65, 747.547 )
+position = Vector2( 118.324, 667.613 )
 
 [node name="Lava4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 129.33, 736.118 )
+position = Vector2( 118.324, 667.613 )
 
-[node name="Lava6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 643.412, 739.292 )
+[node name="Lava5" parent="." instance=ExtResource( 4 )]
+position = Vector2( -142.732, 666.321 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -174,197 +71,47 @@ position = Vector2( 643.412, 739.292 )
 z_index = -1
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 456.389, 403.234 )
+visible = false
+position = Vector2( 445.939, 396.584 )
 scale = Vector2( 1.25776, 1.87691 )
 texture = ExtResource( 5 )
 
+[node name="D6" type="Sprite" parent="."]
+position = Vector2( 275.08, 25.3269 )
+rotation = 0.159152
+scale = Vector2( 0.185698, 0.208927 )
+texture = ExtResource( 6 )
+
 [node name="D8" type="Sprite" parent="."]
-position = Vector2( 632.14, 217.122 )
-rotation = -0.329867
+position = Vector2( 213.249, -4.91468 )
+rotation = 0.159152
 scale = Vector2( 0.118382, 0.133191 )
 texture = ExtResource( 6 )
 
-[node name="D10" type="Sprite" parent="."]
-position = Vector2( 526.877, 238.175 )
-rotation = -0.329867
-scale = Vector2( 0.118382, 0.133191 )
+[node name="D9" type="Sprite" parent="."]
+position = Vector2( 172.65, -22.0495 )
+rotation = 0.159152
+scale = Vector2( 0.0728425, 0.0819545 )
 texture = ExtResource( 6 )
 
-[node name="D11" type="Sprite" parent="."]
-position = Vector2( 611.962, 177.291 )
-rotation = -0.329867
-scale = Vector2( 0.118382, 0.133191 )
-texture = ExtResource( 6 )
-
-[node name="D12" type="Sprite" parent="."]
-position = Vector2( 516.905, 158.396 )
-rotation = -0.329867
-scale = Vector2( 0.118382, 0.133191 )
-texture = ExtResource( 6 )
-
-[node name="D13" type="Sprite" parent="."]
-position = Vector2( 561.557, 138.729 )
-rotation = -0.785397
-scale = Vector2( 0.118382, 0.121946 )
-texture = ExtResource( 6 )
-
-[node name="D14" type="Sprite" parent="."]
-position = Vector2( 500.284, 94.1304 )
-rotation = -0.523598
-scale = Vector2( 0.118382, 0.133191 )
+[node name="D7" type="Sprite" parent="."]
+position = Vector2( 351.558, 78.856 )
+rotation = 0.159152
+scale = Vector2( 0.257456, 0.289662 )
 texture = ExtResource( 6 )
 
 [node name="BallAnchor" parent="." instance=ExtResource( 7 )]
-position = Vector2( 97.4689, 84.3463 )
+position = Vector2( 127.477, 44.0497 )
 
 [node name="Goal" parent="." instance=ExtResource( 8 )]
-position = Vector2( 253.799, 536.969 )
+position = Vector2( 316.022, 670.456 )
+scale = Vector2( 2, 2 )
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
 
 [node name="D1" type="Sprite" parent="."]
-position = Vector2( 334.808, 110.371 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D16" type="Sprite" parent="."]
-position = Vector2( 377.012, 503.428 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D18" type="Sprite" parent="."]
-position = Vector2( 433.271, 542.106 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D20" type="Sprite" parent="."]
-position = Vector2( 480.739, 513.977 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D30" type="Sprite" parent="."]
-position = Vector2( 547.546, 499.912 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D33" type="Sprite" parent="."]
-position = Vector2( 610.837, 521.009 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D36" type="Sprite" parent="."]
-position = Vector2( 667.096, 559.687 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D43" type="Sprite" parent="."]
-position = Vector2( 742.694, 459.476 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D21" type="Sprite" parent="."]
-position = Vector2( 377.012, 503.428 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D23" type="Sprite" parent="."]
-position = Vector2( 433.271, 542.106 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D26" type="Sprite" parent="."]
-position = Vector2( 480.739, 513.977 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D28" type="Sprite" parent="."]
-position = Vector2( 547.546, 499.912 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D34" type="Sprite" parent="."]
-position = Vector2( 610.837, 521.009 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D38" type="Sprite" parent="."]
-position = Vector2( 667.096, 559.687 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D40" type="Sprite" parent="."]
-position = Vector2( 742.694, 459.476 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D17" type="Sprite" parent="."]
-position = Vector2( 377.012, 503.428 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D19" type="Sprite" parent="."]
-position = Vector2( 433.271, 542.106 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D25" type="Sprite" parent="."]
-position = Vector2( 480.739, 513.977 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D29" type="Sprite" parent="."]
-position = Vector2( 547.546, 499.912 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D32" type="Sprite" parent="."]
-position = Vector2( 610.837, 521.009 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D37" type="Sprite" parent="."]
-position = Vector2( 667.096, 559.687 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D42" type="Sprite" parent="."]
-position = Vector2( 742.694, 459.476 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D22" type="Sprite" parent="."]
-position = Vector2( 377.012, 503.428 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D24" type="Sprite" parent="."]
-position = Vector2( 433.271, 542.106 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D27" type="Sprite" parent="."]
-position = Vector2( 480.739, 513.977 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D31" type="Sprite" parent="."]
-position = Vector2( 547.546, 499.912 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D35" type="Sprite" parent="."]
-position = Vector2( 610.837, 521.009 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D39" type="Sprite" parent="."]
-position = Vector2( 667.096, 559.687 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="D41" type="Sprite" parent="."]
-position = Vector2( 742.694, 459.476 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 645.004, 560.709 )
+scale = Vector2( 0.483129, 0.519274 )
 texture = ExtResource( 10 )
