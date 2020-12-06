@@ -13,9 +13,26 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
-view_rect = Rect2( 0, 0, 850, 850 )
-desc = "Level *
-test"
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+view_rect = Rect2( 0, 0, 800, 820 )
+desc = "Level 1
+
+Welcome to our game [b]Drop[/b]!
+
+The goal of the game is to bring a ball to the finish line (bottom left corner) without dropping it in the lava (red).
+
+The ball will be dropped when the beat you are hearing drops.
+
+Before, you have 20 seconds to draw a single shape below this text.
+That shape will then be copied into all the regions marked with a red border.
+
+Be aware: the regions might be rotated or scaled (the circle in the middle shows you, when it's flipped: white is up, black is down).
+Also: after the ball drops, it has to reach the goal after about 20 seconds.
+
+Have fun!"
 
 [node name="Obstacle4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 173.018, 165.454 )

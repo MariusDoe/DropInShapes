@@ -3,6 +3,7 @@ extends Control
 var levels = [
 	preload("res://Level1.tscn"),
 	preload("res://Level2.tscn"),
+	preload("res://Level3.tscn")
 ]
 
 var win_screen = preload("res://WinScreen.tscn")
@@ -49,17 +50,20 @@ func load_level():
 		if child is AudioStreamPlayer:
 			audioplayer = child
 	level.remove_child(audioplayer)
-	add_child(audioplayer)
 
 	main_viewport.add_child(level)
 	ui_update_main_viewport()
 	
-	richtextlabel.text = level.desc
+	richtextlabel.bbcode_enabled = true
+	richtextlabel.bbcode_text = level.desc
 	
 	add_cameras()
 
 	draw.unlock()
 	set_timer()
+	
+	add_child(audioplayer)
+
 
 func unload_level():
 	if level:
@@ -84,7 +88,6 @@ func won():
 	get_tree().change_scene_to(win_screen)
 
 func reset():
-	level_index = 0
 	load_level()
 
 func set_timer():

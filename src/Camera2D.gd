@@ -8,6 +8,7 @@ func set_main():
 func show_rect(rect: Rect2, rot: float, parent = get_parent() as Viewport, stretch = false):
 	print("should show: ", rect)
 	var size = parent.size
+	print("my size: ", size)
 	var adjustedRect = rect
 	if not stretch:
 		if rect.size.x / rect.size.y > size.x / size.y:
@@ -20,6 +21,7 @@ func show_rect(rect: Rect2, rot: float, parent = get_parent() as Viewport, stret
 	position = adjustedRect.position + adjustedRect.size / 2
 	rotating = true
 	rotation = rot
+	print("adjusted: ", adjustedRect)
 	print("zoom: ", zoom)
 	print("position: ", position)
 	print("rotation: ", rotation)

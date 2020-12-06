@@ -12,7 +12,8 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
-view_rect = Rect2( 0, 0, 850, 850 )
+view_rect = Rect2( 0, 0, 860, 750 )
+desc = "Level 3"
 
 [node name="Obstacle4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 172.285, 162.97 )

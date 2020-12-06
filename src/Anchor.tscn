@@ -14,7 +14,6 @@ scale = Vector2( 0.04, 0.04 )
 texture = ExtResource( 2 )
 
 [node name="Border" type="Sprite" parent="."]
-position = Vector2( -0.667419, 0 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 
