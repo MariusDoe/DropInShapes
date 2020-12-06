@@ -24,6 +24,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://BallAnchor.gd"
 }, {
+"base": "Camera2D",
+"class": "CustomCamera",
+"language": "GDScript",
+"path": "res://Camera2D.gd"
+}, {
+"base": "Viewport",
+"class": "CustomViewport",
+"language": "GDScript",
+"path": "res://CustomViewport.gd"
+}, {
 "base": "TextureRect",
 "class": "Draw",
 "language": "GDScript",
@@ -42,12 +52,14 @@ _global_script_classes=[ {
 "base": "Camera2D",
 "class": "MainViewportCamera",
 "language": "GDScript",
-"path": "res://Camera2D.gd"
+"path": "res://Level.gd"
 } ]
 _global_script_class_icons={
 "Anchor": "",
 "Ball": "",
 "BallAnchor": "",
+"CustomCamera": "",
+"CustomViewport": "",
 "Draw": "",
 "Goal": "",
 "Lava": "",
