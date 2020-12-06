@@ -2,6 +2,7 @@ extends Control
 
 var levels = [
 	preload("res://Level1.tscn"),
+	preload("res://Level2.tscn")
 ]
 
 var level: Level = null
@@ -42,10 +43,10 @@ func load_level():
 			ball_anchor = child
 		if child is Goal:
 			goals.append(child)
-			goal.connect("goal_reached", self, "_on_Goal_goal_reached")
+			child.connect("goal_reached", self, "_on_Goal_goal_reached")
 		if child is Lava:
 			lavas.append(child)
-			lava.connect("ball_died", self, "_on_Lava_ball_died")
+			child.connect("ball_died", self, "_on_Lava_ball_died")
 
 	main_viewport.fit_size(level.view_rect.size)
 	camera.show_rect(level.view_rect)

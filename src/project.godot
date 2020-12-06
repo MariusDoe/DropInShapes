@@ -49,8 +49,8 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Lava.gd"
 }, {
-"base": "Camera2D",
-"class": "MainViewportCamera",
+"base": "Node2D",
+"class": "Level",
 "language": "GDScript",
 "path": "res://Level.gd"
 } ]
@@ -63,7 +63,7 @@ _global_script_class_icons={
 "Draw": "",
 "Goal": "",
 "Lava": "",
-"MainViewportCamera": ""
+"Level": ""
 }
 
 [application]
